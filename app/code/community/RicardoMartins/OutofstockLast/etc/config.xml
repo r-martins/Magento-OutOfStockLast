@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <RicardoMartins_OutofstockLast>
+            <version>0.1.0</version>
+        </RicardoMartins_OutofstockLast>
+    </modules>
+    <global>
+        <models>
+            <ricardomartins_outofstocklast>
+                <class>RicardoMartins_OutofstockLast_Model</class>
+            </ricardomartins_outofstocklast>
+            <catalog>
+                <rewrite>
+                    <layer>RicardoMartins_OutofstockLast_Model_Catalog_Layer</layer>
+                </rewrite>
+            </catalog>
+        </models>
+    </global>
+</config>
