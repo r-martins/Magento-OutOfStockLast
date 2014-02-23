@@ -21,6 +21,11 @@ Ou faça manualmente:
 * Limpe o cache
 
 
+## Novidades
+
+0.2.0 - Agora funciona na busca e busca avançada. (Fixes #1 - Obrigado Rodolfo)
+
+
 ## Autor
 [Ricardo Martins](http://ricardomartins.net.br/)  (<ricardo@ricardomartins.net.br>)
 

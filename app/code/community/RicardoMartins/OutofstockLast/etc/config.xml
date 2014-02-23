@@ -2,7 +2,7 @@
 <config>
     <modules>
         <RicardoMartins_OutofstockLast>
-            <version>0.1.0</version>
+            <version>0.2.0</version>
         </RicardoMartins_OutofstockLast>
     </modules>
     <global>
@@ -15,6 +15,19 @@
                     <layer>RicardoMartins_OutofstockLast_Model_Catalog_Layer</layer>
                 </rewrite>
             </catalog>
+
+            <catalogsearch>
+                <rewrite>
+                    <layer>RicardoMartins_OutofstockLast_Model_CatalogSearch_Layer</layer>
+                    <advanced>RicardoMartins_OutofstockLast_Model_CatalogSearch_Advanced</advanced>
+                </rewrite>
+            </catalogsearch>
+            <catalogsearch_mysql4>
+                <rewrite>
+                    <fulltext_collection>RicardoMartins_OutofstockLast_Model_CatalogSearch_Mysql4_Fulltext_Collection</fulltext_collection>
+                    <advanced_collection>RicardoMartins_OutofstockLast_Model_CatalogSearch_Mysql4_Advanced_Collection</advanced_collection>
+                </rewrite>
+            </catalogsearch_mysql4>
         </models>
     </global>
 </config>
