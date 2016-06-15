@@ -19,7 +19,11 @@ class RicardoMartins_OutofstockLast_Model_Catalog_Layer extends Mage_Catalog_Mod
             $collection = $this->_productCollections[$this->getCurrentCategory()->getId()];
         } else {
             $collection = $this->getCurrentCategory()->getProductCollection();
-            $collection->joinField('inventory_in_stock', 'cataloginventory_stock_item', 'is_in_stock', 'product_id=entity_id','is_in_stock>=0', 'left')->setOrder('inventory_in_stock', 'desc');
+            $collection->getSelect()->joinLeft(
+array('stock_status' => $collection->getTable('cataloginventory/stock_status')),
+'e.entity_id = stock_status.product_id AND stock_status.website_id='.Mage::app()->getWebsite()->getId()
+);
+$collection->getSelect()->order('stock_status DESC');
             $this->prepareProductCollection($collection);
             $this->_productCollections[$this->getCurrentCategory()->getId()] = $collection;
         }
