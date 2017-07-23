@@ -5,7 +5,9 @@ class RicardoMartins_OutofstockLast_Model_CatalogSearch_Mysql4_Fulltext_Collecti
    public function setOrder($attribute, $dir = 'desc')
     {
         if ($attribute == 'relevance') {
-            $this->getSelect()->order("on_top DESC")->order("relevance {$dir}");
+            $this->setOrder("on_top","DESC");
+            $this->_relevanceSortOrder = ($dir == 'asc') ? SORT_ASC : SORT_DESC;
+            $this->addOrder(self::RELEVANCE_ORDER_NAME);
         }
         else {
             parent::setOrder('on_top', 'DESC');
